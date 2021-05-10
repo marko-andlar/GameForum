@@ -12,11 +12,12 @@ namespace GameForum.Model
         public string Content { get; set; }
         [Required]
         public DateTime DateCreated { get; set; }
-        [Required]
         public DateTime DateEdited { get; set; }
+        public int PostId { get; set; }
+        public Post Post { get; set; }
         [Required]
-        public int AuthorID { get; set; }
+        public string AuthorID { get; set; }
         public ApplicationUser Author { get; set; }
-        public List<Like> Likes { get; set; }
+        public virtual ICollection<ReplyLike> Likes { get; set; }
     }
 }

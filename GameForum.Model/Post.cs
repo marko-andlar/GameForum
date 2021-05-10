@@ -14,16 +14,15 @@ namespace GameForum.Model
         public string Content { get; set; }
         [Required]
         public DateTime DateCreated { get; set; }
-        [Required]
         public DateTime DateEdited { get; set; }
         [Required]
-        public int AuthorId { get; set; }
-        public int Author { get; set; }
+        public string AuthorId { get; set; }
+        public ApplicationUser Author { get; set; }
         [Required]
         public int CategoryId { get; set; }
         public PostCategory Category { get; set; }
-        public List<Like> Likes { get; set; }
-        public List<Reply> Replies { get; set; }
+        public virtual ICollection<Reply> Replies { get; set; }
+        public virtual ICollection<PostLike> Likes { get; set; }
 
     }
 }

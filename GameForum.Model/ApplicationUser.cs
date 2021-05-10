@@ -3,6 +3,6 @@
 namespace GameForum.Model
 {
     public class ApplicationUser : IdentityUser
-    {
+    { 
     }
 }
