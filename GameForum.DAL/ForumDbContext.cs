@@ -80,11 +80,11 @@ namespace GameForum.DAL
         private static void SeedPostCategories(ModelBuilder builder)
         {
             builder.Entity<PostCategory>().HasData(
-                new PostCategory { Id = 1, Name = "General Discussion" },
-                new PostCategory { Id = 2, Name = "Gameplay" },
-                new PostCategory { Id = 3, Name = "Development" },
-                new PostCategory { Id = 4, Name = "Off-Topic" },
-                new PostCategory { Id = 5, Name = "Support" }
+                new PostCategory { Id = 1, Name = "General Discussion", Description = "Discuss all things related." },
+                new PostCategory { Id = 2, Name = "Gameplay", Description = "Gameplay discussion for the game." },
+                new PostCategory { Id = 3, Name = "Development", Description = "Discuss our in-development content." },
+                new PostCategory { Id = 4, Name = "Off-Topic", Description = "For all your non-game related discussions." },
+                new PostCategory { Id = 5, Name = "Support", Description = "Problem installing? In-game or account issues? Reporting bugs? Come and join us here in Support." }
                 );
         }
 
