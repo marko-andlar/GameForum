@@ -1,0 +1,13 @@
+﻿@model List<GameForum.Model.PostCategory>
+
+<div class="masonry">
+    @foreach (var category in Model)
+    {
+        <div class="item p-3 text-light my-brdr">
+            <div class="">
+                <h3>@category.Name</h3>
+                <p class="text-muted text">@category.Description</p>
+            </div>
+        </div>
+    }
+</div>

@@ -1,26 +1,27 @@
-﻿using GameForum.Web.Models;
+﻿using GameForum.DAL;
+using GameForum.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GameForum.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ForumDbContext _dbContext;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ForumDbContext dbContext, ILogger<HomeController> logger)
         {
+            _dbContext = dbContext;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            return View(await _dbContext.PostCategories.ToListAsync());
         }
 
         public IActionResult Privacy()
