@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GameForum.DAL\GameForum.DAL.csproj" />
     <ProjectReference Include="..\GameForum.Model\GameForum.Model.csproj" />
+    <ProjectReference Include="..\GameForum.ViewModel\GameForum.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

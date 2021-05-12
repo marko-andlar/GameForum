@@ -3,11 +3,13 @@
 <div class="masonry">
     @foreach (var category in Model)
     {
-        <div class="item p-3 text-light my-brdr">
-            <div class="">
-                <h3>@category.Name</h3>
-                <p class="text-muted text">@category.Description</p>
+        <a asp-controller="Post" asp-action="Index" asp-route-categoryId="@category.Id">
+            <div class="item p-3 text-light my-brdr">
+                <div class="">
+                    <h2>@category.Name</h2>
+                    <p class="text-muted text">@category.Description</p>
+                </div>
             </div>
-        </div>
+        </a>
     }
 </div>
