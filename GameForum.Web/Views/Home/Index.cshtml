@@ -3,6 +3,16 @@
 }
 @model List<GameForum.Model.PostCategory>
 
+@section Breadcrumbs{
+    <div class="breadcrumbs my-brdr-btm">
+        <div class="container">
+            <ol class="my-bcrumb">
+                <li class="breadcrumb-item active">Forum</li>
+            </ol>
+        </div>
+    </div>
+}
+
 @section Hero{
     <partial name="_heroPartial" />
 }

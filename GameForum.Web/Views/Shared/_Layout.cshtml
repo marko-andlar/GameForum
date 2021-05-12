@@ -18,24 +18,19 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        </li>-->
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
-        <div class="breadcrumbs my-brdr-btm">
-            <div class="container">
-                <ol class="my-bcrumb">
-                    <li class="breadcrumb-item active">Forum</li>
-                </ol>
-            </div>
-        </div>
+        @await RenderSectionAsync("Breadcrumbs", required: false)
+
     </header>
     @await RenderSectionAsync("Hero", required: false)
     <div class="container mt-5 mb-5">

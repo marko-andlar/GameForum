@@ -31,7 +31,9 @@ namespace GameForum.Web.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Post(int id)
         {
-            var post = await _dbContext.Posts.FindAsync(id);
+            var post = await _dbContext.Posts
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(p => p.Id == id);
             return post is null ? NotFound() : View(post);
         }
     }
