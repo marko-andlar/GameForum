@@ -33,6 +33,10 @@ namespace GameForum.Web.Controllers
         {
             var post = await _dbContext.Posts
                 .Include(p => p.Category)
+                .Include(p => p.Author)
+                .Include(p => p.Likes)
+                .Include(p => p.Replies)
+                    .ThenInclude(r => r.Likes)
                 .FirstOrDefaultAsync(p => p.Id == id);
             return post is null ? NotFound() : View(post);
         }

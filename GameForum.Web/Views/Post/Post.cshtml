@@ -16,8 +16,14 @@
 }
 
 <div class="space"></div>
-
-<div class="text-light">
-    <h1>@Model.Title</h1>
-    <p>@Model.Content</p>
+<div class="row align-items-center text-light">
+    <div class="col-md-9 m-auto">
+        <h1>@Model.Title</h1>
+        <h2 class="text-muted">@Model.Category.Name</h2>
+        <partial name="_PostPartial" />
+        @foreach (var reply in Model.Replies)
+        {
+            <partial name="_ReplyPartial" model="@reply" />
+        }
+    </div>
 </div>

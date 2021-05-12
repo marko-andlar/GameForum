@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model GameForum.Model.Post
+
+<div class="my-brdr-btm my-brdr-top mt-4 pt-4">
+    <div class="row">
+        <div class="d-inline-block" style="width:128px">
+            <img style="width:88px" src="~/img/barbarian.png" />
+        </div>
+        <div class="d-inline-block w-75" style="width:calc(100% - 128px)">
+            <div class="row">
+                <div class="col-6"><p>@Model.Author</p></div>
+                <div class="col-6 align-items-end"><p class="text-right">@Model.DateCreated</p></div>
+            </div>
+            <p>@Model.Content</p>
+            <p class="text-right">Likes: @Model.Likes.Count</p>
+        </div>
+    </div>
+</div>
