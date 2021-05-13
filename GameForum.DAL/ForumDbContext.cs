@@ -142,9 +142,13 @@ namespace GameForum.DAL
             {
                 Id = "e629ed86-01f3-45f2-a5e2-af6913bf20b4",
                 UserName = "Admin",
+                NormalizedUserName = "ADMIN",
                 Email = "admin@gmail.com",
+                NormalizedEmail = "ADMIN@GMAIL.COM",
+                EmailConfirmed = true,
                 LockoutEnabled = false,
-                PhoneNumber = "1234567890"
+                PhoneNumber = "1234567890",
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             var passwordHasher = new PasswordHasher<ApplicationUser>();
@@ -156,9 +160,13 @@ namespace GameForum.DAL
             {
                 Id = "9a3836ea-2188-49c1-99c9-3c7fb9e0d8ce",
                 UserName = "John123",
+                NormalizedUserName = "JOHN123",
                 Email = "john123@gmail.com",
+                EmailConfirmed = true,
+                NormalizedEmail = "JOHN123@GMAIL.COM",
                 LockoutEnabled = false,
-                PhoneNumber = "1234567890"
+                PhoneNumber = "1234567890",
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             userJohn.PasswordHash = passwordHasher.HashPassword(userJohn, "JohnJohn*123");
@@ -169,9 +177,13 @@ namespace GameForum.DAL
             {
                 Id = "f895175a-5bd7-4a95-8ffd-2be14fd3e787",
                 UserName = "Ann123",
+                NormalizedUserName = "ANN123",
                 Email = "ann123@gmail.com",
+                EmailConfirmed = true,
+                NormalizedEmail = "ANN123@GMAIL.COM",
                 LockoutEnabled = false,
-                PhoneNumber = "1234567890"
+                PhoneNumber = "1234567890",
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             userAnn.PasswordHash = passwordHasher.HashPassword(userAnn, "AnnAnn*123");
@@ -182,9 +194,13 @@ namespace GameForum.DAL
             {
                 Id = "413d708c-623c-4be6-af1b-a52e7f120046",
                 UserName = "Mark123",
+                NormalizedUserName = "MARK123",
                 Email = "mark123@gmail.com",
+                EmailConfirmed = true,
+                NormalizedEmail = "MARK123@GMAIL.COM",
                 LockoutEnabled = false,
-                PhoneNumber = "1234567890"
+                PhoneNumber = "1234567890",
+                SecurityStamp = Guid.NewGuid().ToString()
             };
 
             userMark.PasswordHash = passwordHasher.HashPassword(userMark, "MarkMark*123");

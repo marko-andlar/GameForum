@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameForum.DAL.Migrations
 {
     [DbContext(typeof(ForumDbContext))]
-    [Migration("20210513073111_NullableEditDateTime")]
-    partial class NullableEditDateTime
+    [Migration("20210513095648_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -90,13 +90,16 @@ namespace GameForum.DAL.Migrations
                         {
                             Id = "e629ed86-01f3-45f2-a5e2-af6913bf20b4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "32a80abf-9ccb-4844-a12b-cb13238ed6bc",
+                            ConcurrencyStamp = "89396fa2-0fc4-490a-a5ac-169b898f505a",
                             Email = "admin@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO64oXBTjdz2JRdcdOmhNx5Mxf5xRNA/+E8A9mfVg7W/MVwux99Ft0IutGYcJE9seQ==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5d18a408-63fd-40fa-98cb-12c4f608340d",
+                            SecurityStamp = "4976d8f3-fc0b-42aa-86f1-bce0a7ec4cf0",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         },
@@ -104,13 +107,16 @@ namespace GameForum.DAL.Migrations
                         {
                             Id = "9a3836ea-2188-49c1-99c9-3c7fb9e0d8ce",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "790f79dd-f8d2-439c-a8dd-89bca80c41c3",
+                            ConcurrencyStamp = "24fa0ae1-f552-45a7-8910-27cf3df205f5",
                             Email = "john123@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "JOHN123@GMAIL.COM",
+                            NormalizedUserName = "JOHN123",
+                            PasswordHash = "AQAAAAEAACcQAAAAELi/l/UY0PyGFYqUj6OSaQt8EK6uLvT9XD+vVCxPKxYM/7KUGBHGC7qdTF54QU//nQ==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7fd9741e-d96c-4e3b-9ad1-174d13a0a980",
+                            SecurityStamp = "dcec1d83-e117-402f-b51f-38c55c07c34b",
                             TwoFactorEnabled = false,
                             UserName = "John123"
                         },
@@ -118,13 +124,16 @@ namespace GameForum.DAL.Migrations
                         {
                             Id = "f895175a-5bd7-4a95-8ffd-2be14fd3e787",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d654cbde-98a5-44d9-8fc2-b2f0ea8d2e4f",
+                            ConcurrencyStamp = "4f14c72a-f8c5-409f-8a64-5069ba89367e",
                             Email = "ann123@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "ANN123@GMAIL.COM",
+                            NormalizedUserName = "ANN123",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPq3n6ZiRsamKwZxHgFTdiBfVtGOJskatpKTuYMNMlJcve0VdMST5NStLdC7g4Q7Mg==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "49899c38-cf7f-4659-881d-25471179b2c4",
+                            SecurityStamp = "8ab1273b-8199-4b0a-b7dd-5aaf47d3abdd",
                             TwoFactorEnabled = false,
                             UserName = "Ann123"
                         },
@@ -132,13 +141,16 @@ namespace GameForum.DAL.Migrations
                         {
                             Id = "413d708c-623c-4be6-af1b-a52e7f120046",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "16898aae-2b7a-48dd-ba34-c728d54b71d6",
+                            ConcurrencyStamp = "1b6451fb-61d2-49c9-89b3-31e6f5d67b2a",
                             Email = "mark123@gmail.com",
-                            EmailConfirmed = false,
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
+                            NormalizedEmail = "MARK123@GMAIL.COM",
+                            NormalizedUserName = "MARK123",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOEGBscI2gd5mD9l1cqgWl54v27jFVXO8Q8F168FsxXZpmy/eUoyYZqWTbKTNL+v0Q==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f0536d71-e496-4c1b-a98c-123aedc677e1",
+                            SecurityStamp = "3186ed79-d1d3-4201-8b44-57083daf2712",
                             TwoFactorEnabled = false,
                             UserName = "Mark123"
                         });
@@ -189,7 +201,7 @@ namespace GameForum.DAL.Migrations
                             AuthorId = "9a3836ea-2188-49c1-99c9-3c7fb9e0d8ce",
                             CategoryId = 1,
                             Content = "There have been so many awesome armor sets available in the game that I’ve passed up because the color palates didn’t fit the look I was going for. Game really needs to allow the player to customize their armor with armor dyes. Why is this not a thing yet?",
-                            DateCreated = new DateTime(2021, 5, 13, 8, 31, 10, 945, DateTimeKind.Local).AddTicks(6420),
+                            DateCreated = new DateTime(2021, 5, 13, 10, 56, 48, 48, DateTimeKind.Local).AddTicks(8262),
                             Title = "We Need Armor Dyes"
                         },
                         new
@@ -198,7 +210,7 @@ namespace GameForum.DAL.Migrations
                             AuthorId = "f895175a-5bd7-4a95-8ffd-2be14fd3e787",
                             CategoryId = 1,
                             Content = "So my server is pretty much dead, it’s combined with a bunch of other servers but yet I can’t find a guild that isn’t almost full with 90% of people offline all the time. Where would I find a good server to roll on and find a guild?\n\rNot sure if this is the right location for this post, if it isn’t just let me know where to post it and I’ll post it there.",
-                            DateCreated = new DateTime(2021, 5, 13, 4, 31, 10, 947, DateTimeKind.Local).AddTicks(6451),
+                            DateCreated = new DateTime(2021, 5, 13, 6, 56, 48, 50, DateTimeKind.Local).AddTicks(8305),
                             Title = "Need a New Server"
                         },
                         new
@@ -207,7 +219,7 @@ namespace GameForum.DAL.Migrations
                             AuthorId = "9a3836ea-2188-49c1-99c9-3c7fb9e0d8ce",
                             CategoryId = 2,
                             Content = "Tank aggro this xpac has felt awful for me. I strongly dislike the idea of having to fight my dps for aggro on every pack of mobs that they have cds on. This gets significantly worse for when I swap between my main and the other 3 tanks that I currently run. When I swap to a dps spec and join a group I always inspect the tank now to see if I am going to be the one ripping aggro when I have cds up. These of course are the problems that arise as I do my m+ for the week and not really during raiding which has its own frustrations. Fighting with my co-tank for aggro is also just a giant pain in the butt. I personally derive zero enjoyment from all the aggro issues I encounter this xpac and would like to see the aggro gen of tanks go way up and and maybe some kind of bonus aggro in tank spec if you are currently tanking so I don;t have to constantly afk when I pop too much dmg verses my co-tank or vice versa.",
-                            DateCreated = new DateTime(2021, 5, 13, 7, 31, 10, 947, DateTimeKind.Local).AddTicks(6499),
+                            DateCreated = new DateTime(2021, 5, 13, 9, 56, 48, 50, DateTimeKind.Local).AddTicks(8354),
                             Title = "Tank Aggro"
                         },
                         new
@@ -216,7 +228,7 @@ namespace GameForum.DAL.Migrations
                             AuthorId = "9a3836ea-2188-49c1-99c9-3c7fb9e0d8ce",
                             CategoryId = 3,
                             Content = "Character is stuck falling. I have done a ton of stuff and do not want to delete.",
-                            DateCreated = new DateTime(2021, 5, 11, 9, 31, 10, 947, DateTimeKind.Local).AddTicks(6519),
+                            DateCreated = new DateTime(2021, 5, 11, 11, 56, 48, 50, DateTimeKind.Local).AddTicks(8374),
                             Title = "Can’t login"
                         });
                 });
@@ -357,7 +369,7 @@ namespace GameForum.DAL.Migrations
                             Id = 1,
                             AuthorID = "413d708c-623c-4be6-af1b-a52e7f120046",
                             Content = "Can’t say anything but yes we do",
-                            DateCreated = new DateTime(2021, 5, 13, 8, 59, 10, 948, DateTimeKind.Local).AddTicks(636),
+                            DateCreated = new DateTime(2021, 5, 13, 11, 24, 48, 51, DateTimeKind.Local).AddTicks(2783),
                             PostId = 1
                         },
                         new
@@ -365,7 +377,7 @@ namespace GameForum.DAL.Migrations
                             Id = 2,
                             AuthorID = "f895175a-5bd7-4a95-8ffd-2be14fd3e787",
                             Content = "As long as hot pink is an available color for everything.",
-                            DateCreated = new DateTime(2021, 5, 13, 9, 16, 10, 948, DateTimeKind.Local).AddTicks(1420),
+                            DateCreated = new DateTime(2021, 5, 13, 11, 41, 48, 51, DateTimeKind.Local).AddTicks(3612),
                             PostId = 1
                         },
                         new
@@ -373,7 +385,7 @@ namespace GameForum.DAL.Migrations
                             Id = 3,
                             AuthorID = "f895175a-5bd7-4a95-8ffd-2be14fd3e787",
                             Content = "They love making money / saving money so they should just start removing majority of low pop realms and freely transfer the remaining players to the remaining low pop realms. This way they spend less money on servers.",
-                            DateCreated = new DateTime(2021, 5, 13, 9, 24, 10, 948, DateTimeKind.Local).AddTicks(1432),
+                            DateCreated = new DateTime(2021, 5, 13, 11, 49, 48, 51, DateTimeKind.Local).AddTicks(3624),
                             PostId = 2
                         });
                 });
