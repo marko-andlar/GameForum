@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GameForum.Helper\GameForum.Helper.csproj" />
     <ProjectReference Include="..\GameForum.Model\GameForum.Model.csproj" />
   </ItemGroup>
 
