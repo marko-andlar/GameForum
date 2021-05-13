@@ -11,7 +11,7 @@ namespace GameForum.ViewModel
             Content = reply.Content;
             LastActivity = Activity.FromDates(reply.DateCreated, reply.DateEdited);
             Author = reply.Author;
-            LikeCount = reply.Likes.Count;
+            LikeCount = reply.Likes is null ? 0 : reply.Likes.Count;
         }
         public int Id { get; set; }
         public string Content { get; set; }

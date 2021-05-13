@@ -35,7 +35,7 @@
                 <td>@post.Title</td>
                 <td>@post.Author?.UserName</td>
                 <td>@(post.Replies == null ? 0 : post.Replies.Count)</td>
-                <td>0</td>
+                <td>@(post.Replies is null ? post.LastActivity : post.Replies[post.Replies.Count - 1].LastActivity)</td>
             </tr>
         }
     </tbody>

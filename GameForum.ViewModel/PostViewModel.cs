@@ -15,7 +15,7 @@ namespace GameForum.ViewModel
             Author = post.Author;
             Category = post.Category;
             FillReplies(post.Replies);
-            LikeCount = post.Likes.Count;
+            LikeCount = post.Likes is null ? 0 : post.Likes.Count;
         }
 
         private void FillReplies(ICollection<Reply> replies)
@@ -33,7 +33,7 @@ namespace GameForum.ViewModel
         public string LastActivity { get; set; }
         public ApplicationUser Author { get; set; }
         public PostCategory Category { get; set; }
-        public ICollection<ReplyViewModel> Replies { get; set; }
+        public List<ReplyViewModel> Replies { get; set; }
         public int LikeCount { get; set; }
     }
 }

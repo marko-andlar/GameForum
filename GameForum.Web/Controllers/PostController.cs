@@ -26,7 +26,7 @@ namespace GameForum.Web.Controllers
                 .Include(p => p.Replies)
                 .Where(p => p.CategoryId == categoryId)
                 .ToListAsync();
-            return View(new CategoryPostsViewModel { Category = category, Posts = posts });
+            return View(new CategoryPostsViewModel(category, posts));
         }
         [Route("{id}")]
         public async Task<IActionResult> Post(int id)
