@@ -23,6 +23,7 @@
         <tr>
             <td>Topic</td>
             <td>Author</td>
+            <td>Likes</td>
             <td>Replies</td>
             <td>Activity</td>
         </tr>
@@ -34,6 +35,7 @@
             <tr class="clickable-row" onclick="postClicked(@post.Id)">
                 <td>@post.Title</td>
                 <td>@post.Author?.UserName</td>
+                <td>@post.LikeCount</td>
                 <td>@(post.Replies == null ? 0 : post.Replies.Count)</td>
                 <td>@(post.Replies is null ? post.LastActivity : post.Replies[post.Replies.Count - 1].LastActivity)</td>
             </tr>
