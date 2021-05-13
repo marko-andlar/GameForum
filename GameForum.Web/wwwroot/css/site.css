@@ -13,7 +13,9 @@ a {
 	a:hover {
 		color: #6fc0d6;
 	}
-
+.no-underline:hover{
+	text-decoration: none;
+}
 .btn-primary {
 	color: #fff;
 	background-color: #1b6ec2;

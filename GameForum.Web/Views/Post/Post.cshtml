@@ -1,6 +1,10 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 @model GameForum.ViewModel.PostViewModel
 
 @section Breadcrumbs{
@@ -27,3 +31,56 @@
         }
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        function likeClicked(type, id) {
+            if (@(SignInManager.IsSignedIn(User) ? "true" : "false") == false) {
+                window.location.href = "/Identity/Account/Login";
+                return;
+            }
+            if (type === "post") {
+                $.ajax({
+                    type: "POST",
+                    url: "/Post/LikePost/" + id,
+                    success: function (like) {
+                        const countElement = document.getElementById("post").getElementsByTagName("span").item(0);
+                        const currentLikes = countElement.innerHTML;
+                        const iconElement = document.getElementById("post").getElementsByTagName("i").item(0);
+                        if (like == -1) {
+                            iconElement.classList.remove("fas");
+                            iconElement.classList.add("far");
+                        }
+                        else if (like == 1) {
+                            iconElement.classList.remove("far");
+                            iconElement.classList.add("fas");
+                        }
+                        countElement.innerHTML = (parseInt(currentLikes) + like);
+                        console.log("liked the post", + like);
+                    }
+                });
+            }
+            if (type === "reply") {
+                $.ajax({
+                    type: "POST",
+                    url: "/Post/LikeReply/" + id,
+                    success: function (like) {
+                        const countElement = document.getElementById("reply"+id).getElementsByTagName("span").item(0);
+                        const currentLikes = countElement.innerHTML;
+                        const iconElement = document.getElementById("reply"+id).getElementsByTagName("i").item(0);
+                        if (like == -1) {
+                            iconElement.classList.remove("fas");
+                            iconElement.classList.add("far");
+                        }
+                        else if (like == 1) {
+                            iconElement.classList.remove("far");
+                            iconElement.classList.add("fas");
+                        }
+                        countElement.innerHTML = (parseInt(currentLikes) + like);
+                        console.log("liked the reply", + like);
+                    }
+                });
+            }
+        }
+    </script>
+}

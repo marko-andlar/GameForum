@@ -14,7 +14,7 @@
                 <div class="col-6 align-items-end"><p class="text-right">@Model.LastActivity</p></div>
             </div>
             <p>@Model.Content</p>
-            <p class="text-right">Likes: @Model.LikeCount</p>
+            <a id="reply@(Model.Id)" href="javascript:void(0)" class="float-right no-underline" onclick='likeClicked("reply", @Model.Id)'><i class="@(Model.Liked ? "fas" : "far") fa-heart"></i> <span>@Model.LikeCount</span></a>
         </div>
     </row>
 </div>
