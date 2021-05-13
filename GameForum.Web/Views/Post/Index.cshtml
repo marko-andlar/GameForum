@@ -24,7 +24,7 @@
 <h1 class="text-light d-inline-block float-left">@Model.Category.Name</h1>
 @if (SignInManager.IsSignedIn(User))
 {
-    <a class="btn btn-primary d-inline-block float-right mt-1" asp-controller="Post" asp-action="CreatePost" asp-route-categoryId="@Model.Category.Id">New Post</a>
+    <a class="btn btn-mist d-inline-block float-right mt-1" asp-controller="Post" asp-action="CreatePost" asp-route-categoryId="@Model.Category.Id">New Post</a>
 }
 
 <table class="table text-light mt-4">

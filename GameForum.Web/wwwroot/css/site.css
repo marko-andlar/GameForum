@@ -195,6 +195,19 @@ table tbody tr {
 		background: rgba(74,114,125, .15);
 		cursor: pointer;
 	}
+
+.btn-mist {
+	font-weight: 500;
+	color: #5ea5b8;
+	background-color: transparent;
+	border-color: #5ea5b8;
+}
+
+	.btn-mist:hover {
+		color: #f8f9fa;
+		background-color: #5ea5b8;
+		border-color: #5ea5b8;
+	}
 @media only screen and (max-width: 576px) {
 	.masonry { /* Masonry container */
 		-webkit-column-count: 1;
