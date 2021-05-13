@@ -26,7 +26,7 @@ namespace GameForum.Web.Controllers
                 .Include(p => p.Replies)
                 .Where(p => p.CategoryId == categoryId)
                 .ToListAsync();
-            return View(new CategoryPosts { Category = category, Posts = posts });
+            return View(new CategoryPostsViewModel { Category = category, Posts = posts });
         }
         [Route("{id}")]
         public async Task<IActionResult> Post(int id)
@@ -37,8 +37,10 @@ namespace GameForum.Web.Controllers
                 .Include(p => p.Likes)
                 .Include(p => p.Replies)
                     .ThenInclude(r => r.Likes)
+                .Include(p => p.Replies)
+                    .ThenInclude(r => r.Author)
                 .FirstOrDefaultAsync(p => p.Id == id);
-            return post is null ? NotFound() : View(post);
+            return post is null ? NotFound() : View(new PostViewModel(post));
         }
     }
 }

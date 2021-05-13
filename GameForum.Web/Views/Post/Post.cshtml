@@ -1,14 +1,14 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model GameForum.Model.Post
+@model GameForum.ViewModel.PostViewModel
 
 @section Breadcrumbs{
     <div class="breadcrumbs my-brdr-btm">
         <div class="container">
             <ol class="my-bcrumb">
                 <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Forum</a></li>
-                <li class="breadcrumb-item"><a asp-controller="Post" asp-action="Index" asp-route-categoryId="@Model.CategoryId">@Model.Category.Name</a></li>
+                <li class="breadcrumb-item"><a asp-controller="Post" asp-action="Index" asp-route-categoryId="@Model.Category.Id">@Model.Category.Name</a></li>
                 <li class="breadcrumb-item active">@Model.Title</li>
             </ol>
         </div>

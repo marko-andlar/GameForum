@@ -8,8 +8,11 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-	color: #0366d6;
+		color: #5ea5b8;
 }
+	a:hover {
+		color: #6fc0d6;
+	}
 
 .btn-primary {
 	color: #fff;
@@ -169,10 +172,6 @@ header {
 	}
 .break{
 	padding: .1rem;
-}
-p{
-	font-size: 1.2rem;
-	font-weight: 500;
 }
 h1{
 	position: relative;

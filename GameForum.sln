@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameForum.Model", "GameForu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameForum.DAL", "GameForum.DAL\GameForum.DAL.csproj", "{7EF4FECC-C124-48E3-A538-9C22F5B0CFF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameForum.ViewModel", "GameForum.ViewModel\GameForum.ViewModel.csproj", "{532CD015-EFC8-45E2-A0E4-02C71C23F592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameForum.ViewModel", "GameForum.ViewModel\GameForum.ViewModel.csproj", "{532CD015-EFC8-45E2-A0E4-02C71C23F592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameForum.Helper", "GameForum.Helper\GameForum.Helper.csproj", "{211327D2-69FB-4F95-9F20-C8C677E1DCA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{532CD015-EFC8-45E2-A0E4-02C71C23F592}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{532CD015-EFC8-45E2-A0E4-02C71C23F592}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{532CD015-EFC8-45E2-A0E4-02C71C23F592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211327D2-69FB-4F95-9F20-C8C677E1DCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211327D2-69FB-4F95-9F20-C8C677E1DCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211327D2-69FB-4F95-9F20-C8C677E1DCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211327D2-69FB-4F95-9F20-C8C677E1DCA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

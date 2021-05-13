@@ -12,7 +12,7 @@ namespace GameForum.Model
         public string Content { get; set; }
         [Required]
         public DateTime DateCreated { get; set; }
-        public DateTime DateEdited { get; set; }
+        public DateTime? DateEdited { get; set; }
         public int PostId { get; set; }
         public Post Post { get; set; }
         [Required]
