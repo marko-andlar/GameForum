@@ -15,7 +15,6 @@ namespace GameForum.Model
         [Required]
         public DateTime DateCreated { get; set; }
         public DateTime? DateEdited { get; set; }
-        [Required]
         public string AuthorId { get; set; }
         public ApplicationUser Author { get; set; }
         [Required]

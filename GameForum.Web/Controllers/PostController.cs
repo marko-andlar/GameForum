@@ -4,6 +4,8 @@ using GameForum.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -103,6 +105,53 @@ namespace GameForum.Web.Controllers
             if (result == 0)
                 return StatusCode(500);
             return Ok(1);
+        }
+
+        [HttpGet]
+        [Route("New/{categoryId}")]
+        public async Task<IActionResult> CreatePost(int categoryId)
+        {
+            var categories = await _dbContext.PostCategories.ToListAsync();
+            if (categories is null)
+                return StatusCode(500);
+            var category = categories.FirstOrDefault(c => c.Id == categoryId);
+            var categoryItems = new List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>();
+            foreach (var c in categories)
+            {
+                categoryItems.Add(new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem { Value = c.Id.ToString(), Text = c.Name });
+            }
+            return View(
+                new CreatePostViewModel
+                {
+                    Post = new Post { CategoryId = categoryId, Category = category },
+                    Categories = categoryItems
+                });
+        }
+        [HttpPost]
+        [Route("New")]
+        public async Task<IActionResult> CreateNewPost(CreatePostViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await _userManager.GetUserAsync(User);
+            if (user is null)
+            {
+                return NotFound();
+            }
+            var entry = await _dbContext.Posts.AddAsync(new Post
+            {
+                AuthorId = user.Id,
+                CategoryId = model.Post.CategoryId,
+                Title = model.Post.Title,
+                Content = model.Post.Content,
+                DateCreated = DateTime.Now
+            });
+            var ok = await _dbContext.SaveChangesAsync();
+            if (ok == 0)
+                return StatusCode(500);
+            return RedirectToAction("Post", "Post", new { id = entry.Entity.Id });
         }
     }
 }
