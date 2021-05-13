@@ -148,7 +148,7 @@ namespace GameForum.DAL
             };
 
             var passwordHasher = new PasswordHasher<ApplicationUser>();
-            passwordHasher.HashPassword(admin, "Admin*123");
+            admin.PasswordHash = passwordHasher.HashPassword(admin, "Admin*123");
 
             builder.Entity<ApplicationUser>().HasData(admin);
 
@@ -161,7 +161,7 @@ namespace GameForum.DAL
                 PhoneNumber = "1234567890"
             };
 
-            passwordHasher.HashPassword(userJohn, "JohnJohn*123");
+            userJohn.PasswordHash = passwordHasher.HashPassword(userJohn, "JohnJohn*123");
 
             builder.Entity<ApplicationUser>().HasData(userJohn);
 
@@ -174,7 +174,7 @@ namespace GameForum.DAL
                 PhoneNumber = "1234567890"
             };
 
-            passwordHasher.HashPassword(userAnn, "AnnAnn*123");
+            userAnn.PasswordHash = passwordHasher.HashPassword(userAnn, "AnnAnn*123");
 
             builder.Entity<ApplicationUser>().HasData(userAnn);
 
@@ -187,7 +187,7 @@ namespace GameForum.DAL
                 PhoneNumber = "1234567890"
             };
 
-            passwordHasher.HashPassword(userMark, "MarkMark*123");
+            userMark.PasswordHash = passwordHasher.HashPassword(userMark, "MarkMark*123");
 
             builder.Entity<ApplicationUser>().HasData(userMark);
         }
