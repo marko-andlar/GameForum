@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace GameForum.Helper
 {
@@ -11,17 +12,21 @@ namespace GameForum.Helper
         public static string DateToActivity(DateTime date)
         {
             var elapsedTime = DateTime.Now - date;
-            if (elapsedTime.TotalDays >= 365)
+            if (elapsedTime.TotalDays >= 30 && date.Year < DateTime.Now.Year)
             {
-                return (int)elapsedTime.TotalDays / 365 + "y";
+                return "MMM \"'\"yy";
             }
-            else if (elapsedTime.TotalDays >= 30)
+            else if (elapsedTime.TotalDays >= 7)
             {
-                return (int)elapsedTime.TotalDays / 30 + "m";
+                return date.ToString("MMM", DateTimeFormatInfo.InvariantInfo);
             }
             else if (elapsedTime.TotalDays >= 1)
             {
-                return (int)elapsedTime.TotalDays + "d";
+                return date.ToString("ddd", DateTimeFormatInfo.InvariantInfo);
+            }
+            else if (elapsedTime.TotalHours >= 1)
+            {
+                return (int)elapsedTime.TotalHours + "h";
             }
             else if (elapsedTime.TotalMinutes >= 1)
             {
