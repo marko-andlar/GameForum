@@ -15,7 +15,6 @@ namespace GameForum.Model
         public DateTime? DateEdited { get; set; }
         public int PostId { get; set; }
         public Post Post { get; set; }
-        [Required]
         public string AuthorID { get; set; }
         public ApplicationUser Author { get; set; }
         public virtual ICollection<ReplyLike> Likes { get; set; }

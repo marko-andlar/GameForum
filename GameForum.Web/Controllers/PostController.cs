@@ -72,7 +72,7 @@ namespace GameForum.Web.Controllers
                     return StatusCode(500);
                 return Ok(-1);
             }
-            post.Likes.Add(new Model.PostLike { PostId = id, UserId = userId });
+            post.Likes.Add(new PostLike { PostId = id, UserId = userId });
             var result = await _dbContext.SaveChangesAsync();
             if (result == 0)
                 return StatusCode(500);
@@ -126,6 +126,21 @@ namespace GameForum.Web.Controllers
                     Post = new Post { CategoryId = categoryId, Category = category },
                     Categories = categoryItems
                 });
+        }
+        [HttpPost]
+        [Route("CreateReply")]
+        public async Task<IActionResult> CreateReply(Reply model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Post", "Post", model.PostId);
+            }
+            var user = await _userManager.GetUserAsync(User);
+            model.AuthorID = user.Id;
+            model.DateCreated = DateTime.Now;
+            await _dbContext.Replies.AddAsync(model);
+            await _dbContext.SaveChangesAsync();
+            return RedirectToAction("Post", "Post", new { id = model.PostId });
         }
         [HttpPost]
         [Route("New")]

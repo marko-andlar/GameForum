@@ -14,7 +14,7 @@ namespace GameForum.Helper
             var elapsedTime = DateTime.Now - date;
             if (elapsedTime.TotalDays >= 30 && date.Year < DateTime.Now.Year)
             {
-                return "MMM \"'\"yy";
+                return date.ToString("MMM \"'\"yy", DateTimeFormatInfo.InvariantInfo);
             }
             else if (elapsedTime.TotalDays >= 7)
             {
