@@ -1868,6 +1868,13 @@ pre code {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+select option {
+    color: #f8f9fa;
+    background-color: #212529;
+    border: 1px solid rgba(117,169,183);
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .form-control {
     transition: none;
