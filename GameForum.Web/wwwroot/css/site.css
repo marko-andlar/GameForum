@@ -201,6 +201,7 @@ table tbody tr {
 	color: #5ea5b8;
 	background-color: transparent;
 	border-color: #5ea5b8;
+	border-radius: 0!important;
 }
 
 	.btn-mist:hover {

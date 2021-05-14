@@ -32,6 +32,7 @@ namespace GameForum.Web.Controllers
                 .Include(p => p.Replies)
                 .Include(p => p.Likes)
                 .Where(p => p.CategoryId == categoryId)
+                .OrderByDescending(p => p.DateCreated)
                 .ToListAsync();
             return View(new CategoryPostsViewModel(category, posts));
         }
@@ -148,7 +149,7 @@ namespace GameForum.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return RedirectToAction("CreatePost", "Post", new { categoryId = model.Post.CategoryId });
             }
             var user = await _userManager.GetUserAsync(User);
             if (user is null)
